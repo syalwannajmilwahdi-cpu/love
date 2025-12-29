@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>1000 Love</title>
-  <style>
-    body {
-      font-size: 24px;
-      text-align: center;
-      line-height: 1.5;
-      word-wrap: break-word;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1000 Love ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background: #fff0f5;
+  }
+
+  .love {
+    position: absolute;
+    font-size: 24px;
+    animation: float 6s linear infinite;
+    user-select: none;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) scale(0.8);
+      opacity: 1;
     }
-  </style>
+    100% {
+      transform: translateY(-10vh) scale(1.4);
+      opacity: 0;
+    }
+  }
+</style>
 </head>
+
 <body>
-  <script>
-    let love = "Good Night Sayaaaanggkuuu ciinntaakuuuu maaniiisskuuuu yaangg paaliingg caaantiiikk seeduuniiaaaa❤️";
-    let output = "";
-    for (let i = 0; i < 1000; i++) {
-      output += love;
-    }
-    document.body.innerHTML = output;
-  </script>
+
+<script>
+  const totalLove = 1000;
+
+  for (let i = 0; i < totalLove; i++) {
+    const love = document.createElement("div");
+    love.className = "love";
+    love.innerHTML = "Good Night Sayaaaanggg❤️";
+
+    love.style.left = Math.random() * 100 + "vw";
+    love.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    love.style.fontSize = (Math.random() * 20 + 20) + "px";
+    love.style.animationDelay = Math.random() * 5 + "s";
+
+    document.body.appendChild(love);
+  }
+</script>
+
 </body>
 </html>
